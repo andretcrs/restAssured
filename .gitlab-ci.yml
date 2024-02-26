@@ -1,0 +1,28 @@
+stages:
+  - test
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version"
+
+image: maven:3-eclipse-temurin-21
+
+before_script:
+  - apt-get update -qy
+
+test:
+  stage: test
+  script:
+    - mvn $MAVEN_CLI_OPTS clean install
+    - mvn $MAVEN_CLI_OPTS test
+    - mvn surefire-report:report
+
+  artifacts:
+    when: always
+    paths:
+      - target/
+      - target/site/surefire-report/
+
+after_script:
+  - echo 'Uploading JUnit test results'
+  - junit-upload target/surefire-reports/TEST-*.xml

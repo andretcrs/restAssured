@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "b37236d0-03a8-44b9-9dfa-444318514447",
+		"name": "Sicredi Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5870063"
+	},
+	"item": [
+		{
+			"name": "Buscar o status da aplicação",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/users?skip=-10&limit=-20",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "-10"
+						},
+						{
+							"key": "limit",
+							"value": "-20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar usuário para autenticação",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "dummyjson.com/users/49",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"users",
+						"49"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criação de token para Autenticação",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ssarjant1c\",\r\n    \"password\": \"y2YBSxtcmXVW\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/auth/login",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar produtos com autenticação",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDksInVzZXJuYW1lIjoic3NhcmphbnQxYyIsImVtYWlsIjoic3NhcmphbnQxY0BzdGF0Y291bnRlci5jb20iLCJmaXJzdE5hbWUiOiJQZWFybCIsImxhc3ROYW1lIjoiQmxpY2siLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vcm9ib2hhc2gub3JnL2V0bmVtb2V0LnBuZyIsImlhdCI6MTcwMjY3ODEzMywiZXhwIjoxNzAyNjgxNzMzfQ.8l-HVnodldKBjav-zjXdbfD2HlsNxrcvH1s6v1AfkDw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "dummyjson.com/auth/products?limit=null",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"auth",
+						"products"
+					],
+					"query": [
+						{
+							"key": "total",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "skip",
+							"value": "null",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "null"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criação de produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Perfume Oil\",\r\n    \"description\": \"Mega Discount, Impression of A...\",\r\n    \"price\": 13,\r\n    \"discountPercentage\": 8.4,\r\n    \"rating\": 4.26,\r\n    \"stock\": 65,\r\n    \"brand\": \"Impression of Acqua Di Gio\",\r\n    \"category\": \"fragrances\",\r\n    \"thumbnail\": \"https://i.dummyjson.com/data/products/11/thumnail.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/products/add",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"products",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar todos os produtos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/products/?skip=10&limit=60",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "10"
+						},
+						{
+							"key": "limit",
+							"value": "60"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar apenas um produto por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "dummyjson.com/products/3",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"products",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

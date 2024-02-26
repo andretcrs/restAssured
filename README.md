@@ -1,4 +1,4 @@
-# Sicredi Desafio QA
+# Desafio QA
 
 **Descrição do Projeto**
 
